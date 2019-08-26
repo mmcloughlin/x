@@ -1,0 +1,38 @@
+// +build ignore
+
+package main
+
+import (
+	"log"
+	"os"
+
+	"github.com/mmcloughlin/x/tmpl"
+)
+
+var template = `package template
+
+func Foo(x int) int {
+	return x + ConstAdditive
+}
+`
+
+func main() {
+	t, err := tmpl.ParseFile("", []byte(template))
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	err = t.Apply(
+		tmpl.SetPackageName("arith"),
+		tmpl.Rename("Foo", "Add"),
+		tmpl.DefineIntDecimal("ConstAdditive", 42),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	err = t.Format(os.Stdout)
+	if err != nil {
+		log.Fatal(err)
+	}
+}
