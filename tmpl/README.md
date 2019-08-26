@@ -5,6 +5,15 @@ Code generation from pure Go templates.
 ## Example
 
 ```go
+package main
+
+import (
+	"log"
+	"os"
+
+	"github.com/mmcloughlin/x/tmpl"
+)
+
 var template = `package template
 
 func Foo(x int) int {
