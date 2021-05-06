@@ -9,7 +9,7 @@ Experimental profiling support package for Go.
 * Configurable with idiomatic flags: `-cpuprofile`, `-memprofile`, ... just
   like `go test`
 
-# Usage
+## Usage
 
 `profile` should be mostly compatible with
 [`pkg/profile`](https://github.com/pkg/profile), so examples for that package
