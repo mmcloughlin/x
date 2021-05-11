@@ -1,5 +1,7 @@
 # profile
 
+> Experiment graduated to [`profile`](https://github.com/mmcloughlin/profile) project.
+
 Experimental profiling support package for Go.
 
 * Based on the widely-used [`pkg/profile`](https://github.com/pkg/profile):
